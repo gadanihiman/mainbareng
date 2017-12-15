@@ -26,5 +26,17 @@
     <script src="{{ asset('js/app.js') }}"></script>
     @include('_includes.notifications.toast')
     @yield('scripts')
+
+    {{-- for right menu mobile version javascript --}}
+    <script type="text/javascript">
+    const adminRightButton = document.getElementById('admin-right-button')
+
+    adminRightButton.onclick = function () {
+      this.classList.toggle('is-active');
+      document.getElementById('admin-right-menu').classList.toggle('is-active');
+    }
+
+    </script>
+
 </body>
 </html>
