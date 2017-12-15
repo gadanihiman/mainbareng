@@ -1,7 +1,7 @@
 {
   "private": true,
-  "name": "dev-marketer",
-  "description": "DevMarketer video tutorial series Building an Advanced Blog/CMS",
+  "name": "mainbareng",
+  "description": "Main Bareng sports together",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -26,6 +26,7 @@
     "vue": "^2.5.3"
   },
   "dependencies": {
+    "fontawesome": "^4.7.2",
     "vue-template-compiler": "^2.5.3"
   }
 }

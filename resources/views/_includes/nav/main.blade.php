@@ -2,7 +2,7 @@
   <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item is-paddingless brand-item" href="{{route('home')}}">
-        <img src="{{asset('images/devmarketer-logo.png')}}" alt="DevMarketer logo">
+        <img src="{{asset('images/logo-mb.png')}}" alt="Main Bareng Logo">
       </a>
 
       @if (Request::segment(1) == "manage")
@@ -13,24 +13,24 @@
         </a>
       @endif
 
-      <button class="button navbar-burger">
+      <button class="button navbar-burger" id="admin-right-button">
        <span></span>
        <span></span>
        <span></span>
      </button>
     </div>
-    <div class="navbar-menu">
+    <div class="navbar-menu" id="admin-right-menu">
       <div class="navbar-start">
-        <a class="navbar-item is-tab is-active">Learn</a>
-        <a class="navbar-item is-tab">Discuss</a>
-        <a class="navbar-item is-tab">Share</a>
+        <a class="navbar-item is-tab is-active">Home</a>
+        <a class="navbar-item is-tab">Play</a>
+        <a class="navbar-item is-tab">Find</a>
       </div> <!-- end of .navbar-start -->
 
 
       <div class="navbar-end nav-menu" style="overflow: visible">
         @guest
           <a href="{{route('login')}}" class="navbar-item is-tab">Login</a>
-          <a href="{{route('register')}}" class="navbar-item is-tab">Join the Community</a>
+          <a href="{{route('register')}}" class="navbar-item is-tab">Register Here For Free!</a>
         @else
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">Hey {{Auth::user()->name}}</a>
@@ -46,11 +46,13 @@
                   <i class="fa fa-fw fa-bell m-r-5"></i>
                 </span>Notifications
               </a>
-              <a href="{{route('manage.dashboard')}}" class="navbar-item">
-                <span class="icon">
-                  <i class="fa fa-fw fa-cog m-r-5"></i>
-                </span>Manage
-              </a>
+              @if (Auth::user()->hasRole('superadministrator|administrator|editor|author|contributor'))
+                <a href="{{route('manage.dashboard')}}" class="navbar-item">
+                  <span class="icon">
+                    <i class="fa fa-fw fa-cog m-r-5"></i>
+                  </span>Manage
+                </a>
+              @endif
               <hr class="navbar-divider">
               <a href="{{route('logout')}}" class="navbar-item" onclick="event.preventDefault();
                          document.getElementById('logout-form').submit();">

@@ -6,7 +6,7 @@
     <div class="column is-one-third is-offset-one-third m-t-100">
       <div class="card">
         <div class="card-content">
-          <h1 class="title">Join The Community</h1>
+          <h1 class="title">Be a member now !</h1>
 
           <form action="{{route('register')}}" method="POST" role="form">
             {{csrf_field()}}

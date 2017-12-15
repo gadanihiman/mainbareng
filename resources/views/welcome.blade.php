@@ -84,7 +84,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    DevMarketer.io
+                  <a href="{{ url('/home') }}">
+                  <img src="{{asset('images/logo-mb.png')}}" alt="DevMarketer logo">
+                  </a>
                 </div>
             </div>
         </div>
